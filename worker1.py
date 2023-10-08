@@ -94,9 +94,9 @@ for i in listURL:
             reader = csv.reader(f)
             listCSV = list(reader)
     else:
-        listCSV = [['user', 'repo', 'type', 'orcount']]
+        listCSV1 = [['user', 'repo', 'type', 'orcount']]
     flag = 0
-    for i1 in listCSV:
+    for i1 in listCSV1:
         if usTMP in i1 and rpTMP in i1:
             flag = 1
             break
@@ -118,7 +118,7 @@ for i in listURL:
     listCSV.append([usTMP,rpTMP,tpTMP,orCountRepo])
     with open(repoCSV, 'w') as outcsv:
         writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
-        for item in listCSV:
+        for item in listCSV1:
             writer.writerow([item[0], item[1], item[2], item[3]])
 #    os.system('git config --global http.postBuffer 524288000')
 #    os.system('git config --local user.email \"klsst1nv0@gmail.com\"')
