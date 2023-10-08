@@ -53,10 +53,13 @@ def depTocsv(fileNamePOM,filenameCSV):
             listCSV = list(reader)
     else:
         listCSV = [['id', 'group', 'aritfact']]
-    with open(fileNamePOM, 'r') as f:
-        dxml = f.read()
-    Bs_data = BeautifulSoup(dxml, "xml")
-    b_unique = Bs_data.find_all('dependency')
+    try:
+        with open(fileNamePOM, 'r') as f:
+            dxml = f.read()
+        Bs_data = BeautifulSoup(dxml, "xml")
+        b_unique = Bs_data.find_all('dependency')
+    except:
+        return 0
     for di in b_unique:
         grTMP = ''
         arTMP = ''
@@ -76,7 +79,7 @@ def depTocsv(fileNamePOM,filenameCSV):
             listCSV.append([2**(len(listCSV)-1),grTMP,arTMP])
 
     with open(filenameCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n',encoding='utf-8')
         for item in listCSV:
             writer.writerow([item[0], item[1], item[2]])
     return orCountTMP
@@ -114,7 +117,7 @@ for i in listURL:
             tpTMP = 'build.gradle'
     listCSV.append([usTMP,rpTMP,tpTMP,orCountRepo])
     with open(repoCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n',encoding='utf-8')
         for item in listCSV:
             writer.writerow([item[0], item[1], item[2], item[3]])
 #    os.system('git config --global http.postBuffer 524288000')
