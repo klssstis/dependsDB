@@ -28,7 +28,6 @@ if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
 
 listURL = list()
 for i in range(20):
-    print(str(i+1))
     time.sleep(1)
     os.system('rm -rf /tmp/ghTMP')
     os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
@@ -80,6 +79,7 @@ def depTocsv(fileNamePOM,filenameCSV):
 
     with open(filenameCSV, 'w') as outcsv:
         writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        print(listCSV)
         for item in listCSV:
             writer.writerow([item[0], item[1], item[2]])
     return orCountTMP
