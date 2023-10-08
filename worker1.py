@@ -79,8 +79,8 @@ def depTocsv(fileNamePOM,filenameCSV):
 
     with open(filenameCSV, 'w') as outcsv:
         writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
-        print(listCSV)
         for item in listCSV:
+            print(item)
             writer.writerow([item[0], item[1], item[2]])
     return orCountTMP
 
