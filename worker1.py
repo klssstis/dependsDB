@@ -22,7 +22,7 @@ repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'.csv'
 depCSV = './results/dep_'+t.strftime('%Y%m%d')+'.csv'
 repoCSVup = './results/repo_now.csv'
 depCSVup = './results/dep_now.csv'
-if os.path.exists() and os.path.exists():
+if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
     os.system('cp '+repoCSVup+' '+repoCSV)
     os.system('cp '+depCSVup+' '+depCSV)
 
