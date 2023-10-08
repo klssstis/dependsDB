@@ -24,7 +24,7 @@ repoCSVup = './results/repo_now.csv'
 depCSVup = './results/dep_now.csv'
 
 listURL = list()
-for i in range(2):
+for i in range(20):
     print(str(i+1))
     time.sleep(1)
     os.system('rm -rf /tmp/ghTMP')
@@ -123,5 +123,5 @@ for i in listURL:
 #    os.system('git push "https://klssstis:'+token+'@github.com/klssstis/dependsDB.git" HEAD:main --force')
 
 
-os.system('cp '+repoCSVup+' '+repoCSVup)
-os.system('cp '+depCSVup+' '+depCSVup)
+os.system('cp '+repoCSV+' '+repoCSVup)
+os.system('cp '+depCSV+' '+depCSVup)
