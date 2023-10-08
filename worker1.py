@@ -1,0 +1,124 @@
+import os
+import json
+import time
+from bs4 import BeautifulSoup
+import csv
+import glob
+import datetime
+
+import sys
+try:
+    token = sys.argv[1]
+except IndexError:
+    print("not all parameters")
+    os._exit(0)
+
+
+
+os.system('echo '+token+'| gh auth login -h github.com --with-token')
+
+t = datetime.datetime.today()
+repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'.csv'
+depCSV = './results/dep_'+t.strftime('%Y%m%d')+'.csv'
+repoCSVup = './results/repo_now.csv'
+depCSVup = './results/dep_now.csv'
+
+listURL = list()
+for i in range(2):
+    print(str(i+1))
+    time.sleep(1)
+    os.system('rm -rf /tmp/ghTMP')
+    os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
+    f = open('/tmp/ghTMP')
+    data = json.load(f)
+    if not 'items' in data:
+        break
+    print(len(data['items']))
+    if len(data['items']) ==0:
+        break
+    for j in data['items']:
+        if not j['clone_url'] in listURL:
+            listURL.append(j['clone_url'])
+    print(len(listURL))
+    f.close()
+
+
+
+def depTocsv(fileNamePOM,filenameCSV):
+    orCountTMP = 0
+    if os.path.exists(filenameCSV):
+        with open(filenameCSV, newline='') as f:
+            reader = csv.reader(f)
+            listCSV = list(reader)
+    else:
+        listCSV = [['id', 'group', 'aritfact']]
+    with open(fileNamePOM, 'r') as f:
+        dxml = f.read()
+    Bs_data = BeautifulSoup(dxml, "xml")
+    b_unique = Bs_data.find_all('dependency')
+    for di in b_unique:
+        grTMP = str(di).split('<groupId>')[1].split('</groupId>')[0]
+        arTMP = str(di).split('<artifactId>')[1].split('</artifactId>')[0]
+        flag = 0
+        for i in listCSV:
+            if grTMP in i and arTMP in i:
+                flag = 1
+                orCountTMP |= int(i[0])
+                break
+        if flag==0:
+            orCountTMP |= 2**(len(listCSV)-1)
+            listCSV.append([2**(len(listCSV)-1),grTMP,arTMP])
+
+    with open(filenameCSV, 'w') as outcsv:
+        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        for item in listCSV:
+            writer.writerow([item[0], item[1], item[2]])
+    return orCountTMP
+
+
+
+for i in listURL:
+    usTMP = i.split('/')[3]
+    rpTMP = i.split('/')[4]
+    if os.path.exists(repoCSV):
+        with open(repoCSV, newline='') as f:
+            reader = csv.reader(f)
+            listCSV = list(reader)
+    else:
+        listCSV = [['user', 'repo', 'type', 'orcount']]
+    flag = 0
+    for i1 in listCSV:
+        if usTMP in i1 and rpTMP in i1:
+            flag = 1
+            break
+    if flag == 1:
+        continue
+    os.system('rm -rf /tmp/works')
+    os.system('git clone '+i+' /tmp/works')
+    orCountRepo=0
+    tpTMP = ''
+    flag = 0
+    for file in glob.glob("/tmp/works/**/pom.xml",recursive=True):
+        tpTMP ='pom.xml'
+        atmp = depTocsv(file,depCSV)
+        orCountRepo |= int(atmp)
+        flag = 1
+    if flag == 0:
+        for file in glob.glob("/tmp/works/**/build.gradle", recursive=True):
+            tpTMP = 'build.gradle'
+    listCSV.append([usTMP,rpTMP,tpTMP,orCountRepo])
+    with open(repoCSV, 'w') as outcsv:
+        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        for item in listCSV:
+            writer.writerow([item[0], item[1], item[2], item[3]])
+    os.system('git config --global http.postBuffer 524288000')
+    os.system('git config --local user.email \"klsst1nv0@gmail.com\"')
+    os.system('git config --local user.name \"klssstis\"')
+    os.system('git remote -v')
+    os.system('git add --all')
+    os.system('git commit -m \"local result\"')
+    os.system('git push "https://klssstis:'+token+'@github.com/klssstis/dependsDB.git" HEAD:main --force')
+
+
+os.system('cp '+repoCSVup+' '+repoCSVup)
+os.system('cp '+depCSVup+' '+depCSVup)
