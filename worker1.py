@@ -36,13 +36,11 @@ for i in range(20):
     data = json.load(f)
     if not 'items' in data:
         break
-    print(len(data['items']))
     if len(data['items']) ==0:
         break
     for j in data['items']:
         if not j['clone_url'] in listURL:
             listURL.append(j['clone_url'])
-    print(len(listURL))
     f.close()
 
 
@@ -60,6 +58,8 @@ def depTocsv(fileNamePOM,filenameCSV):
     Bs_data = BeautifulSoup(dxml, "xml")
     b_unique = Bs_data.find_all('dependency')
     for di in b_unique:
+        grTMP = ''
+        arTMP = ''
         if '<groupId>' in str(di) and '<artifactId>' in str(di):
             grTMP = str(di).split('<groupId>')[1].split('</groupId>')[0]
             arTMP = str(di).split('<artifactId>')[1].split('</artifactId>')[0]
