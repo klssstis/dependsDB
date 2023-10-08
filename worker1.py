@@ -92,7 +92,7 @@ for i in listURL:
     if os.path.exists(repoCSV):
         with open(repoCSV, newline='') as f:
             reader = csv.reader(f)
-            listCSV = list(reader)
+            listCSV1 = list(reader)
     else:
         listCSV1 = [['user', 'repo', 'type', 'orcount']]
     flag = 0
@@ -115,7 +115,7 @@ for i in listURL:
     if flag == 0:
         for file in glob.glob("/tmp/works/**/build.gradle", recursive=True):
             tpTMP = 'build.gradle'
-    listCSV.append([usTMP,rpTMP,tpTMP,orCountRepo])
+    listCSV1.append([usTMP,rpTMP,tpTMP,orCountRepo])
     with open(repoCSV, 'w') as outcsv:
         writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
         for item in listCSV1:
