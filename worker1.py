@@ -57,8 +57,11 @@ def depTocsv(fileNamePOM,filenameCSV):
     Bs_data = BeautifulSoup(dxml, "xml")
     b_unique = Bs_data.find_all('dependency')
     for di in b_unique:
-        grTMP = str(di).split('<groupId>')[1].split('</groupId>')[0]
-        arTMP = str(di).split('<artifactId>')[1].split('</artifactId>')[0]
+        if '<groupId>' in str(di) and '<artifactId>' in str(di):
+            grTMP = str(di).split('<groupId>')[1].split('</groupId>')[0]
+            arTMP = str(di).split('<artifactId>')[1].split('</artifactId>')[0]
+        else:
+            continue
         flag = 0
         for i in listCSV:
             if grTMP in i and arTMP in i:
