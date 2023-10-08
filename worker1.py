@@ -111,13 +111,13 @@ for i in listURL:
         writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
         for item in listCSV:
             writer.writerow([item[0], item[1], item[2], item[3]])
-    os.system('git config --global http.postBuffer 524288000')
-    os.system('git config --local user.email \"klsst1nv0@gmail.com\"')
-    os.system('git config --local user.name \"klssstis\"')
-    os.system('git remote -v')
-    os.system('git add --all')
-    os.system('git commit -m \"local result\"')
-    os.system('git push "https://klssstis:'+token+'@github.com/klssstis/dependsDB.git" HEAD:main --force')
+#    os.system('git config --global http.postBuffer 524288000')
+#    os.system('git config --local user.email \"klsst1nv0@gmail.com\"')
+#    os.system('git config --local user.name \"klssstis\"')
+#    os.system('git remote -v')
+#    os.system('git add --all')
+#    os.system('git commit -m \"local result\"')
+#    os.system('git push "https://klssstis:'+token+'@github.com/klssstis/dependsDB.git" HEAD:main --force')
 
 
 os.system('cp '+repoCSVup+' '+repoCSVup)
