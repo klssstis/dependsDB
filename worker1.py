@@ -78,7 +78,7 @@ def depTocsv(fileNamePOM,filenameCSV):
             listCSV.append([hex(2**(len(listCSV)-1)),grTMP,arTMP])
 
     with open(filenameCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',' lineterminator='\n')
+        writer = csv.writer(outcsv, lineterminator='\n')
         for item in listCSV:
             if len(item)!=3:
                 print(item)
@@ -118,7 +118,7 @@ for i in listURL:
             tpTMP = 'build.gradle'
     listCSV1.append([usTMP,rpTMP,tpTMP,hex(orCountRepo)])
     with open(repoCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',', lineterminator='\n')
+        writer = csv.writer(outcsv,  lineterminator='\n')
         for item in listCSV1:
             writer.writerow([item[0], item[1], item[2], item[3]])
 #    os.system('git config --global http.postBuffer 524288000')
