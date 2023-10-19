@@ -1,0 +1,34 @@
+name: start worker
+#on: 
+#  push:
+#    branches:
+#      - main
+on:
+  schedule:
+    - cron:  '0 14 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: main
+    - name: install depends
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y git python3 sudo python3-pip gh
+          sudo pip3 install requests BeautifulSoup4 html5lib lxml
+    - name: runs
+      env:
+        COMMIT_MSG: |
+          addcommit
+          skip-checks: true
+      run: |
+          sudo python3 worker2.py ${{ secrets.ACCESS_TOKEN }}
+          sudo git config --global http.postBuffer 524288000
+          sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
+          sudo git config --local user.name "${GITHUB_ACTOR}"
+          sudo git remote -v
+          sudo git add --all
+          sudo git commit -m "result works"
+          sudo git push "https://klssstis:${{ secrets.ACCESS_TOKEN }}@github.com/klssstis/dependsDB.git" HEAD:main --force 
