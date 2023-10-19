@@ -20,8 +20,8 @@ os.system('echo '+token+'| gh auth login -h github.com --with-token')
 t = datetime.datetime.today()
 repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'.csv'
 depCSV = './results/dep_'+t.strftime('%Y%m%d')+'.csv'
-repoCSVup = './results/repo_now.csv'
-depCSVup = './results/dep_now.csv'
+repoCSVup = './results/repo_now_h.csv'
+depCSVup = './results/dep_now_h.csv'
 if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
     os.system('cp '+repoCSVup+' '+repoCSV)
     os.system('cp '+depCSVup+' '+depCSV)
@@ -71,14 +71,14 @@ def depTocsv(fileNamePOM,filenameCSV):
         for i in listCSV:
             if grTMP in i and arTMP in i:
                 flag = 1
-                orCountTMP |= int(i[0])
+                orCountTMP |= int(i[0],16)
                 break
         if flag==0:
             orCountTMP |= 2**(len(listCSV)-1)
-            listCSV.append([2**(len(listCSV)-1),grTMP,arTMP])
+            listCSV.append([hex(2**(len(listCSV)-1)),grTMP,arTMP])
 
     with open(filenameCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        writer = csv.writer(outcsv, delimiter=',' lineterminator='\n')
         for item in listCSV:
             if len(item)!=3:
                 print(item)
@@ -106,7 +106,7 @@ for i in listURL:
     os.system('rm -rf /tmp/works')
     os.system('git clone '+i+' /tmp/works')
     orCountRepo=0
-    tpTMP = ''
+    tpTMP = 'unknown'
     flag = 0
     for file in glob.glob("/tmp/works/**/pom.xml",recursive=True):
         tpTMP ='pom.xml'
@@ -116,9 +116,9 @@ for i in listURL:
     if flag == 0:
         for file in glob.glob("/tmp/works/**/build.gradle", recursive=True):
             tpTMP = 'build.gradle'
-    listCSV1.append([usTMP,rpTMP,tpTMP,orCountRepo])
+    listCSV1.append([usTMP,rpTMP,tpTMP,hex(orCountRepo)])
     with open(repoCSV, 'w') as outcsv:
-        writer = csv.writer(outcsv, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+        writer = csv.writer(outcsv, delimiter=',', lineterminator='\n')
         for item in listCSV1:
             writer.writerow([item[0], item[1], item[2], item[3]])
 #    os.system('git config --global http.postBuffer 524288000')
