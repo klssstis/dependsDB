@@ -1,11 +1,11 @@
 name: start worker
-on: 
-  push:
-    branches:
-      - main
-#on:
-#  schedule:
-#    - cron:  '0 14 * * *'
+#on: 
+#  push:
+#    branches:
+#      - main
+on:
+  schedule:
+    - cron:  '0 14 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
