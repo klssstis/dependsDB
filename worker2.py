@@ -17,8 +17,8 @@ except IndexError:
 os.system('echo '+token+'| gh auth login -h github.com --with-token')
 
 t = datetime.datetime.today()
-repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'.csv'
-depCSV = './results/dep_'+t.strftime('%Y%m%d')+'.csv'
+repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'_l.csv'
+depCSV = './results/dep_'+t.strftime('%Y%m%d')+'_l.csv'
 repoCSVup = './results/repo_now_l.csv'
 depCSVup = './results/dep_now_l.csv'
 if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
