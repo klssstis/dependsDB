@@ -56,7 +56,7 @@ def depTocsv(fileNamePOM,filenameCSV):
         Bs_data = BeautifulSoup(dxml, "xml")
         b_unique = Bs_data.find_all('dependency')
     except:
-        return 0
+        return []
     for di in b_unique:
         grTMP = ''
         arTMP = ''
