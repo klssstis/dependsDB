@@ -24,7 +24,7 @@ jobs:
           addcommit
           skip-checks: true
       run: |
-          sudo python3 worker1.py ${{ secrets.ACCESS_TOKEN }}
+          sudo python3 worker1.1.py ${{ secrets.ACCESS_TOKEN }}
           sudo git config --global http.postBuffer 524288000
           sudo git config --local user.email "${GITHUB_ACTOR}@gmail.com"
           sudo git config --local user.name "${GITHUB_ACTOR}"
