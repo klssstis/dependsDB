@@ -150,7 +150,6 @@ for i in listURL:
     os.system('git clone '+i+' /tmp/works')
     auth = Auth.Token(token)
     g = Github(auth=auth)
-    print(usTMP+"/"+rpTMP.split('.git')[0])
     repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
     if not repo.description is None:
         query_document = repo.description.split()
@@ -171,6 +170,7 @@ for i in listURL:
         else:
             listSIM = [['user','repo','simTL','maxSC']]
         listSIM.append(usTMP,rpTMP,str(lRes),maxScore)
+        print(maxScore)
         with open(repoSIM, 'w') as outcsv:
             writer = csv.writer(outcsv,  lineterminator='\n')
             for item in listSIM:
