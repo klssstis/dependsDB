@@ -163,7 +163,7 @@ for i in listURL:
         for document_number, score in sorted(enumerate(sims), key=lambda x: x[1], reverse=True):
             if maxScore == 0:
                 maxScore = score
-            if score>80:
+            if score>0.8:
                 lRes.append(document_number)
         repoSIM = './results/repo_sim_'+t.strftime('%Y%m%d')+'.csv'
         if os.path.exists(repoSIM):
