@@ -84,7 +84,7 @@ for i in range(20):
         if not j['clone_url'] in listURL:
             listURL.append(j['clone_url'])
     f.close()
-
+print(len(listURL))
 
 
 def depTocsv(fileNamePOM,filenameCSV):
@@ -150,6 +150,7 @@ for i in listURL:
     os.system('git clone '+i+' /tmp/works')
     auth = Auth.Token(token)
     g = Github(auth=auth)
+    print(i.split('/')[-2]+"/"+i.split('/')[-1].split('.git')[0])
     repo = g.get_repo(i.split('/')[-2]+"/"+i.split('/')[-1].split('.git')[0])
     if not repo.description is None:
         query_document = repo.description.split()
