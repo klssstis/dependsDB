@@ -70,7 +70,7 @@ if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
     os.system('cp '+depCSVup+' '+depCSV)
 
 listURL = list()
-for i in range(5):
+for i in range(9):
     time.sleep(1)
     os.system('rm -rf /tmp/ghTMP')
     os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&sort=updated\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
