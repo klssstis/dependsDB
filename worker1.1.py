@@ -149,7 +149,11 @@ for i in listURL:
     os.system('git clone '+i+' /tmp/works')
     auth = Auth.Token(token)
     g = Github(auth=auth)
-    repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
+    try:
+        repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
+    except:
+        print(usTMP+"/"+rpTMP)
+        continue
     if not repo.description is None:
         query_document = repo.description.split()
         query_bow = dictionary.doc2bow(query_document)
