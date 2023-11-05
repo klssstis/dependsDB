@@ -73,7 +73,7 @@ listURL = list()
 for i in range(20):
     time.sleep(1)
     os.system('rm -rf /tmp/ghTMP')
-    os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
+    os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&sort=updated\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
     f = open('/tmp/ghTMP')
     data = json.load(f)
     if not 'items' in data:
@@ -151,7 +151,7 @@ for i in listURL:
     auth = Auth.Token(token)
     g = Github(auth=auth)
     print(i.split('/')[-2]+"/"+i.split('/')[-1].split('.git')[0])
-    repo = g.get_repo(i.split('/')[-2]+"/"+i.split('/')[-1].split('.git')[0])
+    repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
     if not repo.description is None:
         query_document = repo.description.split()
         query_bow = dictionary.doc2bow(query_document)
@@ -170,7 +170,7 @@ for i in listURL:
                 listSIM = list(reader)
         else:
             listSIM = [['user','repo','simTL','maxSC']]
-        listSIM.append(i.split('/')[-2],i.split('/')[-1],str(lRes),maxScore)
+        listSIM.append(usTMP,rpTMP,str(lRes),maxScore)
         with open(repoSIM, 'w') as outcsv:
             writer = csv.writer(outcsv,  lineterminator='\n')
             for item in listSIM:
