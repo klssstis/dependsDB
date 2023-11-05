@@ -7,6 +7,7 @@ import glob
 import datetime
 os.system('pip3 install requests')
 os.system('pip3 install PyGithub')
+os.system('pip3 install gensim')
 os.system('apt-get install -y gh')
 import requests
 from github import Github
