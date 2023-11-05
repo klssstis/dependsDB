@@ -12,7 +12,6 @@ os.system('apt-get install -y gh')
 import requests
 from github import Github
 from github import Auth
-from datetime import datetime, timedelta
 
 
 import sys
