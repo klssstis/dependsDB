@@ -5,14 +5,14 @@ from bs4 import BeautifulSoup
 import csv
 import glob
 import datetime
-
+os.system('pip3 install requests')
+os.system('pip3 install PyGithub')
+os.system('apt-get install -y gh')
 import requests
 from github import Github
 from github import Auth
 from datetime import datetime, timedelta
-os.system('pip3 install requests')
-os.system('pip3 install PyGithub')
-os.system('apt-get install -y gh')
+
 
 import sys
 try:
