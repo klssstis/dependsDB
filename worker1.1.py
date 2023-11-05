@@ -84,7 +84,6 @@ for i in range(5):
         if not j['clone_url'] in listURL:
             listURL.append(j['clone_url'])
     f.close()
-print(len(listURL))
 
 
 def depTocsv(fileNamePOM,filenameCSV):
@@ -169,8 +168,7 @@ for i in listURL:
                 listSIM = list(reader)
         else:
             listSIM = [['user','repo','simTL','maxSC']]
-        listSIM.append(usTMP,rpTMP,str(lRes),maxScore)
-        print(maxScore)
+        listSIM.append([usTMP,rpTMP,str(lRes),maxScore])
         with open(repoSIM, 'w') as outcsv:
             writer = csv.writer(outcsv,  lineterminator='\n')
             for item in listSIM:
