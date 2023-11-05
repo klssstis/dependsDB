@@ -44,10 +44,10 @@ texts = [[word for word in document.lower().split() if word not in stoplist]
 from collections import defaultdict
 frequency = defaultdict(int)
 for text in texts:
-    for token in text:
-        frequency[token] += 1
+    for tkn in text:
+        frequency[tkn] += 1
 
-processed_corpus = [[token for token in text if frequency[token] > 1] for text in texts]
+processed_corpus = [[tkn for tkn in text if frequency[tkn] > 1] for text in texts]
 from gensim import corpora
 
 dictionary = corpora.Dictionary(processed_corpus)
