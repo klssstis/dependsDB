@@ -70,7 +70,7 @@ if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
     os.system('cp '+depCSVup+' '+depCSV)
 
 listURL = list()
-for i in range(20):
+for i in range(5):
     time.sleep(1)
     os.system('rm -rf /tmp/ghTMP')
     os.system('gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /search/repositories?q=language:java\&sort=updated\&per_page=100\&page='+str(i+1)+'> /tmp/ghTMP')
@@ -150,7 +150,7 @@ for i in listURL:
     os.system('git clone '+i+' /tmp/works')
     auth = Auth.Token(token)
     g = Github(auth=auth)
-    print(i.split('/')[-2]+"/"+i.split('/')[-1].split('.git')[0])
+    print(usTMP+"/"+rpTMP.split('.git')[0])
     repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
     if not repo.description is None:
         query_document = repo.description.split()
