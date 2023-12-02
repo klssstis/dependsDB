@@ -145,11 +145,12 @@ for i in listURL:
             break
     if flag == 1:
         continue
-    os.system('rm -rf /tmp/works')
-    os.system('git clone '+i+' /tmp/works')
-    auth = Auth.Token(token)
-    g = Github(auth=auth)
     try:
+        os.system('rm -rf /tmp/works')
+        os.system('git clone '+i+' /tmp/works')
+        auth = Auth.Token(token)
+        g = Github(auth=auth)
+#    try:
         repo = g.get_repo(usTMP+"/"+rpTMP.split('.git')[0])
     except:
         print(usTMP+"/"+rpTMP)
