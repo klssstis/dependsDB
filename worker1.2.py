@@ -63,8 +63,8 @@ index = similarities.SparseMatrixSimilarity(tfidf[bow_corpus], num_features=len(
 t = datetime.datetime.today()
 repoCSV = './results/repo_'+t.strftime('%Y%m%d')+'_hn.csv'
 depCSV = './results/dep_'+t.strftime('%Y%m%d')+'_hn.csv'
-repoCSVup = './results/repo_now_h.csv'
-depCSVup = './results/dep_now_h.csv'
+repoCSVup = './results/repo_now_hn.csv'
+depCSVup = './results/dep_now_hn.csv'
 if os.path.exists(repoCSVup) and os.path.exists(depCSVup):
     os.system('cp '+repoCSVup+' '+repoCSV)
     os.system('cp '+depCSVup+' '+depCSV)
