@@ -111,6 +111,7 @@ def depTocsv(fileNamePOM,filenameCSV):
             continue
         flag = 0
         for i in listCSV:
+            print(i)
             if grTMP in i and arTMP in i:
                 flag = 1
                 orCountTMP |= 2**int(i[0],16)
