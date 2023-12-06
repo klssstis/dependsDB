@@ -118,7 +118,7 @@ def depTocsv(fileNamePOM,filenameCSV):
                 break
         if flag==0:
             orCountTMP |= 2**(len(listCSV)-1)
-            listCSV.append([len(listCSV)-1,grTMP,arTMP])
+            listCSV.append([str(len(listCSV)-1),grTMP,arTMP])
 
     with open(filenameCSV, 'w') as outcsv:
         writer = csv.writer(outcsv, lineterminator='\n')
