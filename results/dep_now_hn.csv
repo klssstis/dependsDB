@@ -36233,3 +36233,301 @@ id,group,aritfact
 36123,care.smith.top,top-api
 36124,care.smith.top,top-phenotypic-query
 36125,care.smith.top,top-document-query
+36126,org.beryx,text-io-web
+36127,org.zowe.client.java.sdk,zowe-client-java-sdk
+36128,com.project,test-connect-excel
+36129,edu.byu.cs240,server
+36130,com.comphenix,ProtocolLib
+36131,com.sinch,sdk-sms
+36132,co.jackson.marvel,marvel-api
+36133,co.jackson.marvel,util
+36134,org.my,bmunit-tutorial-app
+36135,com.microsoft.azure,applicationinsights-logging-log4j2
+36136,com.microsoft.azure,azure-functions-maven-plugin
+36137,maec.nteligen.dhs.lib,maeclib
+36138,com.microsoft.azure,azure-spring-apps-maven-plugin
+36139,org.oldo,tippotle-api
+36140,org.guppy4j,core
+36141,org.guppy4j,event
+36142,org.guppy4j,io-impl
+36143,org.guppy4j,sound
+36144,org.guppy4j,static
+36145,org.guppy4j,io
+36146,org.oldo,tippotle-impl
+36147,org.oldo,tippotle-files
+36148,org.guppy4j,event-impl
+36149,org.guppy4j,core-impl
+36150,org.guppy4j,sound-impl
+36151,com.github.aquality-automation,aquality-selenium
+36152,com.github.PaperCardDev,database-api
+36153,com.github.PaperCardDev,mc-command
+36154,com.github.Anon8281,UniversalScheduler
+36155,com.github.YiC200333,XConomyAPI
+36156,org.apache.accumulo,accumulo-compaction-coordinator
+36157,org.apache.accumulo,accumulo-compactor
+36158,org.apache.accumulo,accumulo-gc
+36159,org.apache.accumulo,accumulo-iterator-test-harness
+36160,org.apache.accumulo,accumulo-manager
+36161,org.apache.accumulo,accumulo-native
+36162,org.apache.accumulo,accumulo-shell
+36163,org.apache.accumulo,accumulo-tracer
+36164,org.apache.hadoop,hadoop-tools
+36165,org.glassfish.jersey.ext,jersey-mvc
+36166,io.liquer.pencil,pencil-spring-boot-starter
+36167,io.liquer.pencil,pencil-password-encoder
+36168,com.free-now.sauron.plugins,bcrypt-passwordencoder-checker
+36169,"
+                    org.springframework.cloud
+                ","
+                    spring-cloud-dependencies
+                "
+36170,"
+                org.springframework.cloud
+            ","
+                spring-cloud-function-context
+            "
+36171,"
+                org.springframework.boot
+            ","
+                spring-boot-starter-data-jpa
+            "
+36172,"
+                org.postgresql
+            ","
+                postgresql
+            "
+36173,"
+                org.projectlombok
+            ","
+                lombok
+            "
+36174,"
+                org.springframework.boot
+            ","
+                spring-boot-starter-data-mongodb
+            "
+36175,dev.lukaszmichalak,polish-number-speller
+36176,org.swinglabs,pdf-renderer
+36177,org.verapdf,validation-model
+36178,biblemulticonverter,BibleMultiConverter-schemas
+36179,biblemulticonverter,BibleMultiConverter
+36180,org.tmatesoft.sqljet,sqljet
+36181,biblemulticonverter,BibleMultiConverter-LogosEdition
+36182,biblemulticonverter,BibleMultiConverter-SWORDEdition
+36183,biblemulticonverter,BibleMultiConverter-SQLiteEdition
+36184,com.github.AndBible,jsword
+36185,io.quarkiverse.githubapp,quarkus-github-app-command-airline
+36186,org.swisspush,redisques
+36187,org.swisspush,rest-storage
+36188,org.swisspush,mod-metrics
+36189,org.swisspush.gateleen,gateleen-logging
+36190,org.swisspush.gateleen,gateleen-monitoring
+36191,org.swisspush.gateleen,gateleen-testhelper
+36192,org.swisspush.gateleen,gateleen-validation
+36193,org.swisspush.gateleen,gateleen-core
+36194,org.swisspush.gateleen,gateleen-routing
+36195,org.swisspush.gateleen,gateleen-runconfig
+36196,org.swisspush.gateleen,gateleen-scheduler
+36197,org.swisspush.gateleen,gateleen-queue
+36198,org.swisspush.gateleen,gateleen-hook
+36199,org.swisspush.gateleen,gateleen-packing
+36200,org.swisspush.gateleen,gateleen-user
+36201,org.swisspush.gateleen,gateleen-expansion
+36202,org.swisspush.gateleen,gateleen-delta
+36203,org.swisspush.gateleen,gateleen-security
+36204,org.swisspush.gateleen,gateleen-qos
+36205,org.swisspush.gateleen,gateleen-delegate
+36206,org.swisspush.gateleen,gateleen-merge
+36207,org.codehaus.groovy.modules.http-builder,http-builder
+36208,org.swisspush.gateleen,gateleen-hook-js
+36209,org.swisspush.gateleen,gateleen-kafka
+36210,org.swisspush.gateleen,gateleen-cache
+36211,"
+				org.apache.hop",hop-engine
+36212,org.apache.hop,"
+				hop-plugins-valuetypes-json"
+36213,"
+				commons-lang",commons-lang
+36214,org.apache.commons,"
+				commons-vfs2"
+36215,"
+				com.jayway.jsonpath",json-path
+36216,org.eclipse.platform,"
+				org.eclipse.osgi"
+36217,"
+				org.eclipse.platform",org.eclipse.core.runtime
+36218,"
+				org.eclipse.platform",org.eclipse.text
+36219,"
+				org.eclipse.platform",org.eclipse.jface
+36220,"
+				org.eclipse.platform",org.eclipse.jface.text
+36221,"
+				org.apache.hop",hop-core
+36222,junit,"
+				junit"
+36223,"
+				org.openjdk.jmh",jmh-core
+36224,org.openjdk.jmh,"
+				jmh-generator-annprocess"
+36225,org.apache.hop,hop-expression-plugins
+36226,pe.cronos,global-domain
+36227,pe.cronos,global-infrastructure
+36228,pe.cronos,global-application
+36229,com.github.vsonnier,hppcrt
+36230,${project.groupId},owlapi-parsers
+36231,${project.groupId},owlapi-apibinding
+36232,${project.groupId},owlapi-tools
+36233,${project.groupId},owlapi-impl
+36234,${project.groupId},owlapi-oboformat
+36235,${project.groupId},owlapi-rio
+36236,${project.groupId},owlapi-api
+36237,${project.groupId},owlapi-compatibility
+36238,org.eclipse.rdf4j,rdf4j-rio-languages
+36239,org.eclipse.rdf4j,rdf4j-rio-datatypes
+36240,org.eclipse.rdf4j,rdf4j-rio-rdfjson
+36241,org.eclipse.rdf4j,rdf4j-rio-trix
+36242,org.eclipse.rdf4j,rdf4j-rio-hdt
+36243,org.eclipse.rdf4j,rdf4j-common-util
+36244,${project.groupId},owlapi-distribution
+36245,net.sourceforge.owlapi,owlapi-ncbitaxon
+36246,org.eclipse.rdf4j,rdf4j-common-annotation
+36247,org.eclipse.rdf4j,rdf4j-common-text
+36248,org.eclipse.rdf4j,rdf4j-common-iterator
+36249,org.eclipse.rdf4j,rdf4j-common-xml
+36250,org.apache.felix,org.osgi.core
+36251,org.apache.servicemix.bundles,org.apache.servicemix.bundles.javax-inject
+36252,com.spt-development,spt-development-cid-jms-spring
+36253,com.spt-development,spt-development-cid-jms-spring-boot-autoconfigure
+36254,pl.idedyk.japanese,JapaneseDictionaryAPI
+36255,pl.idedyk.japanese,JapaneseDictionaryLuceneCommon
+36256,com.atilika.kuromoji,kuromoji-core
+36257,com.atilika.kuromoji,kuromoji-ipadic
+36258,com.atilika.kuromoji,kuromoji-unidic
+36259,com.atilika.kuromoji,kuromoji-jumandic
+36260,com.atilika.kuromoji,kuromoji-unidic-kanaaccent
+36261,adhoc,adhoc-core
+36262,adhoc,adhoc-angular-app
+36263,us.fatehi,schemacrawler-utility
+36264,us.fatehi,schemacrawler-api
+36265,us.fatehi,schemacrawler-tools
+36266,us.fatehi,schemacrawler-loader
+36267,us.fatehi,schemacrawler-text
+36268,us.fatehi,schemacrawler-diagram
+36269,us.fatehi,schemacrawler-testdb
+36270,us.fatehi,schemacrawler
+36271,us.fatehi,schemacrawler-commandline
+36272,com.oracle.database.jdbc.debug,ojdbc8_g
+36273,us.fatehi,schemacrawler-scripting
+36274,us.fatehi,schemacrawler-jdbc-drivers
+36275,us.fatehi,schemacrawler-sqlite
+36276,de.danielbechler,java-object-diff
+36277,com.ing.data,cassandra-jdbc-wrapper
+36278,us.fatehi,schemacrawler-distrib
+36279,us.fatehi,schemacrawler-lint
+36280,us.fatehi,schemacrawler-chatgpt
+36281,us.fatehi,schemacrawler-offline
+36282,us.fatehi,schemacrawler-db2
+36283,us.fatehi,schemacrawler-hsqldb
+36284,us.fatehi,schemacrawler-oracle
+36285,us.fatehi,schemacrawler-mysql
+36286,us.fatehi,schemacrawler-postgresql
+36287,us.fatehi,schemacrawler-sqlserver
+36288,org.teiid,teiid-runtime
+36289,org.teiid.connectors,translator-file
+36290,org.teiid.wildfly.connectors,connector-file
+36291,us.fatehi,schemacrawler-docker
+36292,com.github.aquality-automation,aquality-selenium-core
+36293,org.apache.sanselan,sanselan
+36294,net.sf.exlp,exlp-bom
+36295,org.jeesl,jeesl-xml
+36296,org.jeesl,jeesl-util
+36297,org.jeesl,jeesl-interfaces
+36298,net.sf.exlp,exlp-util
+36299,cn.eccto.study,common
+36300,org.activiti,activiti-dependencies
+36301,org.activiti,activiti-bpmn-model
+36302,org.activiti,activiti-bpmn-converter
+36303,org.activiti,activiti-bpmn-layout
+36304,vip.ericchen.study,ecrpc-api
+36305,org.openjfx,javafx.base
+36306,velocity,velocity-dep
+36307,com.example,smart-project-feign
+36308,com.mapscode,orders-service
+36309,com.officerschool,Course-Lottery-service
+36310,com.officerschool,Course-Lottery-dao
+36311,com.github.pagehelper,pagehelper-spring-boot-autoconfigure
+36312,com.officerschool,Course-Lottery-common
+36313,com.officerschool,Course-Lottery-web
+36314,org.example,untitled
+36315,software.amazon.timestream,amazon-timestream-jdbc
+36316,com.amazonaws,aws-java-sdk-timestreamquery
+36317,com.amazonaws,aws-java-sdk-timestreamwrite
+36318,ru.vyarus,dropwizard-guicey
+36319,org.speer,speer-core
+36320,net.nikr,dds
+36321,io.github.emd4600,javafxribbon
+36322,ru.iooko,amqp
+36323,ru.iooko,clients
+36324,dev.valora.commons,spring-security-jpa-auditing
+36325,io.github.tors42,chariot
+36326,com.bank,shared
+36327,ru.odnoklassniki,one-nio
+36328,one,one.nalim
+36329,it.unimi.dsi,sux4j
+36330,${project.groupId},mariaDB4j
+36331,ch.vorburger.exec,exec
+36332,${project.groupId},mariaDB4j-core
+36333,ch.vorburger.mariaDB4j,mariaDB4j-db-linux64
+36334,ch.vorburger.mariaDB4j,mariaDB4j-db-winx64
+36335,${project.groupId},mariaDB4j-springboot
+36336,com.ryazancev,clients
+36337,io.pivotal.spring.cloud,spring-cloud-services-starter-service-registry
+36338,io.github.resilience4j,resilience4j-annotations
+36339,net.bigtangle,bigtangle-core
+36340,net.bigtangle,bigtangle-docker
+36341,com.hazelcast,"
+				hazelcast-all"
+36342,net.bigtangle,bigtangle-server
+36343,tgb.btc,rce-api
+36344,com.github.barilo-egor,rce-api
+36345,telran.probes.api,probes-api
+36346,org.ibissource,ibis-adapterframework-core
+36347,org.fusesource.scalate,scalate-wikitext
+36348,org.fusesource.scalate,scalate-page
+36349,org.fusesource.scalamd,scalamd
+36350,org.apache.maven.scm,maven-scm-provider-git-commons
+36351,com.indexdata,masterkey-common
+36352,com.indexdata.xml,xmlfilter
+36353,com.indexdata,masterkey-dal
+36354,com.indexdata,oaipmh-lib
+36355,net.sourceforge.saxon,saxon
+36356,com.indexdata.annotations.processor,jaxb-index-generator
+36357,tomcat,catalina
+36358,com.indexdata.io,UTF8InputStream
+36359,io.dekorate,kubernetes-spring-starter
+36360,io.dekorate,jib-annotations
+36361,vip.yeee.memo,base-web
+36362,vip.yeee.memo,base-mybatis-plus
+36363,vip.yeee.memo,base-swagger
+36364,vip.yeee.memo,common-activiti7
+36365,vip.yeee.app,yeee-app-common
+36366,vip.yeee.memo,common-platform-auth-server
+36367,vip.yeee.memo,common-platform-auth-client
+36368,vip.yeee.app,yeee-sys-manage
+36369,vip.yeee.app,yeee-activiti7-manage
+36370,com.github.StarsDown64,Minecord-API
+36371,telran.reflect,annotations
+36372,uk.ac.ed.inf,IlpDataObjects
+36373,com.example,pojo
+36374,io.awspring.cloud,spring-cloud-aws-starter-secrets-manager
+36375,com.github.seregamorph,spring-test-smart-context
+36376,com.kaurpalang,mirth-plugin-maven-plugin
+36377,com.mirth.connect,mirth-server
+36378,com.mirth.connect,donkey-model
+36379,${project.parent.groupId},server
+36380,${project.parent.groupId},shared
+36381,${project.parent.groupId},client
+36382,com.dedalus,shared
+36383,com.mirth.connect,mirth-client
+36384,com.mirth.connect,mirth-client-core
